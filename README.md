@@ -32,8 +32,7 @@ This method is used to parse a single row from your CSV file as a string and ret
 ```csharp
 public ITrackable Parse(string line)
 {
-    // Take your line and use string.Split(",", line);
-    // Or it's line.Split(",");
+    // Take your line and use line.Split(',') to split it up into an array of strings, separated by the char ','
 
     // If your array.Length is less than 3, something went wrong
     // Log that and return null
