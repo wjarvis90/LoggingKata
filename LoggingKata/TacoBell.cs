@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LoggingKata
+﻿namespace LoggingKata
 {
-    class TacoBell
+    public class TacoBell : ITrackable
     {
+        public TacoBell(double lon, double lat, string name)
+        {
+            Name = name;
+            Location = new Point(lon, lat);
+        }
+        public string Name { get; set; }
+        public Point Location { get; set; }
     }
 }
