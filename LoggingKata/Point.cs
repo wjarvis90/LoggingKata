@@ -1,13 +1,14 @@
 ﻿namespace LoggingKata
 {
+
     public struct Point
     {
-        public Point(double longitude, double latitude) : this()
+        public Point(double lattitude, double longitude) : this()
         {
+            Latitude = lattitude;
             Longitude = longitude;
-            Latitude = latitude;
         }
-        public double Longitude { get; set; }
-        public double Latitude { get; set; }
+        double Longitude { get; set; }
+        double Latitude { get; set; }
     }
 }

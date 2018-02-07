@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using LoggingKata;
 
 namespace LoggingKata.Test
 {
@@ -12,47 +11,31 @@ namespace LoggingKata.Test
     public class TacoParserTestFixture
     {
         [Test]
-        public void ShouldReturnNullForNullString()
+        public void ReturnNullForEmptyString()
         {
-            // Arrange
-            string line = null;
-            var parser = new TacoParser();
+            //Arrange
+            var nullString = "";
+            var nullTestParse = new TacoParser();
 
-            // Act
-            var result = parser.Parse(line);
+            //Act
+            var result = nullTestParse.Parse(nullString);
 
-            // Assert
-
+            //Assert
             Assert.IsNull(result);
         }
 
         [Test]
-        public void ShouldReturnNullForEmptyString()
+        public void ShouldParseLine()
         {
-            // Arrange
-            var line = "";
-            var parser = new TacoParser();
+            //TODO: Complete ShouldParseLine
+            //Arrange
+            var exampleString = "-84.677017, 34.073638";
+            var testParse = new TacoParser();
 
-            // Act
-            var result = parser.Parse(line);
+            //Act
+            var result = testParse.Parse(exampleString);
 
-            // Assert
-
-            Assert.IsNull(result);
-        }
-
-        [Test]
-        public void ShouldParseString()
-        {
-            // Arrange
-            var line = "-84.677017, 34.073638,\"Taco Bell Acwort... (Free trial * Add to Cart for a full POI info) \"";
-            var parser = new TacoParser();
-
-            // Act
-            var result = parser.Parse(line);
-
-            // Assert
-
+            //Assert
             Assert.IsNotNull(result);
         }
     }
